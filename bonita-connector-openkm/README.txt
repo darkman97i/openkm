@@ -1,2 +1,2 @@
-Hay que descargarse este proyecto del cual todos los conectores son padres:
+Download parent project available at:
 https://github.com/bonitasoft/bonita-connectors
