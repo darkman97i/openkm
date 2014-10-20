@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition:ConnectorDefinition
+	xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<id>OpenKMGetDocumentByVersion</id>
+	<version>1.0.0</version>
+	<icon>openkm.jpg</icon>
+
+	<category id="dms" icon="dms.png" />
+	<category id="OpenKM" icon="openkm.jpg" parentCategoryId="dms"/>
+
+	<input name="okmHost" type="java.lang.String" mandatory="true" defaultValue="http://localhost:8080/OpenKM" />
+	<input name="okmUser" type="java.lang.String" mandatory="true" defaultValue="okmAdmin"/>
+	<input name="okmPassword" type="java.lang.String" mandatory="true" defaultValue="admin"/>
+	
+	<input name="docId" type="java.lang.String" mandatory="true" />
+	<input name="versionId" type="java.lang.String" mandatory="true" />
+	<input name="dstPath" type="java.lang.String" mandatory="true" />
+	
+	<output name="okmStatus" type="java.lang.Boolean" />
+	<output name="okmErrorCause" type="java.lang.String" />
+	<output name="okmErrorMessage" type="java.lang.String" />
+
+	<page id="OpenKMConfiguration">
+		<widget id="host" inputName="okmHost" xsi:type="definition:Text" />
+		<widget id="user" inputName="okmUser" xsi:type="definition:Text" />
+		<widget id="password" inputName="okmPassword" xsi:type="definition:Password" />
+	</page>
+
+	<page id="FunctionParameters">
+		<widget id="docId" inputName="docId" xsi:type="definition:Text" />
+		<widget id="versionId" inputName="versionId" xsi:type="definition:Text" />
+		<widget id="dstPath" inputName="dstPath" xsi:type="definition:Text" />
+	</page>
+
+    <jarDependency>sdk4j.jar</jarDependency>
+
+</definition:ConnectorDefinition>
